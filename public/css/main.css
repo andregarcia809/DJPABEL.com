@@ -1,0 +1,22 @@
+body {
+  position: absolute;
+  left: 10px;
+  top: 25px;
+  -webkit-transition: all ease;
+  transition: all ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background: yellow;
+  color: #fff;
+  line-height: 20px;
+  font-weight: 600;
+  font-family: sans-serif; }
+  body h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: gray;
+    font-size: 5rem; }
