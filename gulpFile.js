@@ -31,7 +31,6 @@ gulp.task('images', function () {
 gulp.task('script', function (cb) {
   pump([
       gulp.src('./src/js/**/*.js'),
-      uglify(),
       gulp.dest('./public/js/')
     ],
     cb
@@ -41,7 +40,7 @@ gulp.task('script', function (cb) {
 // Watch Task
 // Watches Js
 gulp.task('watch', function () {
-  // gulp.watch('./src/js/**/*.js', ['script']),
+  gulp.watch('./src/js/**/*.js', ['script']),
   gulp.watch('./src/sass/**/*.scss', ['style']),
   gulp.watch('./src/img/', ['images'])
 });

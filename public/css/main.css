@@ -1,22 +1,142 @@
+@import url("https://fonts.googleapis.com/css?family=Kavoon|Open+Sans");
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+*,
+*:before,
+*::after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit; }
+
+html,
 body {
-  position: absolute;
-  left: 10px;
-  top: 25px;
-  -webkit-transition: all ease;
-  transition: all ease;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  background: yellow;
+  width: 100%;
+  height: 100%;
+  background: #1C1F2A;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
   color: #fff;
-  line-height: 20px;
-  font-weight: 600;
-  font-family: sans-serif; }
-  body h1 {
-    font-family: Arial, Helvetica, sans-serif;
-    color: gray;
-    font-size: 5rem; }
+  scroll-behavior: smooth; }
+
+.wrapper {
+  width: 90%;
+  height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative; }
+
+h1 {
+  font-size: 1.5rem;
+  text-align: center;
+  color: #fff;
+  text-transform: capitalize; }
+
+h2 {
+  font-size: 1rem;
+  color: #000; }
+
+p {
+  font-size: 1.1rem;
+  color: #fff; }
+
+li {
+  color: #fff;
+  list-style-type: none; }
+
+a {
+  text-decoration: none; }
+
+a:hover,
+a::focus,
+a:active {
+  outline-style: none; }
+
+img {
+  width: 100%;
+  height: auto; }
+
+#main__header {
+  background-image: url("../img/HERO.jpg");
+  background-position: center bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh; }
+  #main__header .hamburger__container {
+    width: 32px;
+    min-width: 32px;
+    padding-top: 1.5rem;
+    padding-left: 1rem; }
+    @media screen and (min-width: 1024px) {
+      #main__header .hamburger__container {
+        width: 45px; } }
+    #main__header .hamburger__container .hamburger__menu {
+      width: 100%;
+      cursor: pointer; }
+      #main__header .hamburger__container .hamburger__menu .hamburger__span,
+      #main__header .hamburger__container .hamburger__menu .hamburger__span:before,
+      #main__header .hamburger__container .hamburger__menu .hamburger__span:after {
+        zoom: 1.1;
+        content: "";
+        display: block;
+        width: 100%;
+        height: 3.5px;
+        background-color: #f8f9fa;
+        position: relative; }
+      #main__header .hamburger__container .hamburger__menu .hamburger__span:before {
+        bottom: 9px; }
+      #main__header .hamburger__container .hamburger__menu .hamburger__span:after {
+        top: 5px; }
+  #main__header .main__nav {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0rem;
+    left: -150rem;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+    z-index: 999; }
+    #main__header .main__nav .main__nav__menu {
+      width: 200px;
+      height: 100%;
+      background: #360505; }
+      #main__header .main__nav .main__nav__menu .main__nav__menu__item {
+        padding: 1rem;
+        border-bottom: 1px solid #020202; }
+        #main__header .main__nav .main__nav__menu .main__nav__menu__item:hover {
+          background-color: #300101; }
+        #main__header .main__nav .main__nav__menu .main__nav__menu__item a {
+          color: #fff;
+          text-transform: uppercase; }
+  #main__header .open {
+    left: 0; }
+  #main__header .wrapper .header__content {
+    max-width: 550px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 12rem; }
+    @media screen and (min-width: 1300px) {
+      #main__header .wrapper .header__content {
+        margin-top: 9rem; } }
+    #main__header .wrapper .header__content .logo {
+      width: 90%;
+      margin: 0 auto; }
+    #main__header .wrapper .header__content button {
+      width: 190px;
+      padding: .5rem;
+      background-color: #970a13;
+      color: #fff;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 10px;
+      position: relative;
+      top: -1rem; }
+      @media screen and (min-width: 500px) {
+        #main__header .wrapper .header__content button {
+          width: 250px;
+          font-size: 1.8rem; } }
