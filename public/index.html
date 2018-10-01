@@ -31,10 +31,14 @@
         <div class="logo">
           <img src="img/Logo.png" alt="DJPABEL Logo">
         </div>
-        <a href="#contact" class="header btn">Contact Me</a>
+        <div class="flex">
+          <a href="#contact" class="header__btn">Contact Me</a>
+        </div>
       </div>
     </div>
   </header>
+  <!--Main Header End-->
+
   <!--Services-->
   <section id="services">
     <div class="wrapper">
@@ -44,11 +48,11 @@
         <div class="lighting__image">
           <img src="img/lighting.JPG" alt="DJPABEL Bio Picture">
         </div>
-        <div class="services__details">
+        <div class="services__details lighting">
           <h2>Lighting</h2>
           <div class="services__info">
             <p>Up-lighting is a necessity for transforming a venue into your dream event, and I am most
-              affordable, professional and dependable uplighting.</p>
+              affordable, professional and dependable.</p>
           </div>
         </div>
       </div>
@@ -64,18 +68,22 @@
           <div class="events__image__overlay"></div>
         </div>
         <div class="services__details">
-          <h2>JW. <span>Events</span></h2>
+          <h2>Events</h2>
           <div class="services__info">
             <p> I can do just about any event you will need a good DJ for. I have performed at multiple weddings and
               parties over the years.</p>
           </div>
+          <div class="jw__wrap">
+            <h6 id="jw">JW EVENTS ONLY</h6>
+            <div class="line"></div>
+          </div>
         </div>
       </div>
       <div class="services__content">
-        <div class="services__giphy">
-          <img src="img/music.JPG">
+        <div class="music__image">
+          <img src="img/music.jpeg">
         </div>
-        <div class="services__details">
+        <div class="services__details music">
           <h2>Music</h2>
           <div class="services__info">
             <p> I specialize in all types of music and allow you to choose the songs. If you want a specific song; no
@@ -85,43 +93,46 @@
       </div>
     </div>
   </section>
+  <!--Services End-->
+
   <!--Photos/Reviews-->
   <section id="photos-reviews">
     <div class="wrapper">
       <h1>Photos</h1>
-      <h3>Modern Sound and Variety of Lighting </h3>
+      <h3>Life is made of small moments like this.</h3>
       <div class="photos__gallery">
         <div class="img__wrap">
-          <img src="img/lighting.JPG" alt="DJPABEL Bio Picture">
+          <img src="img/photos-1.JPG" alt="DJPABEL Bio Picture">
         </div>
         <div class="img__wrap">
-          <img src="img/lighting.JPG" alt="DJPABEL Bio Picture">
+          <img src="img/photos-5.JPG" alt="DJPABEL Bio Picture">
         </div>
         <div class="img__wrap">
-          <img src="img/lighting.JPG" alt="DJPABEL Bio Picture">
+          <img src="img/photos-3.JPG" alt="DJPABEL Bio Picture">
         </div>
         <div class="img__wrap">
-          <img src="img/lighting.JPG" alt="DJPABEL Bio Picture">
+          <img src="img/photos-6.JPG" alt="DJPABEL Bio Picture">
         </div>
         <div class="img__wrap">
-          <img src="img/lighting.JPG" alt="DJPABEL Bio Picture">
+          <img src="img/photos-2.JPG" alt="DJPABEL Bio Picture">
         </div>
         <div class="img__wrap">
-          <img src="img/lighting.JPG" alt="DJPABEL Bio Picture">
+          <img src="img/photos-4.JPG" alt="DJPABEL Bio Picture">
         </div>
-      </div>
-      <div class="social__media">
-        <div class=" social__media__wrap">
-          <h4>Follow me on </br>Facebook <span>#DJPABEL</span></h4>
-          <div class="social__media__btn__wrap">
-            <a href="#contact" class="social__media__btn">Facebook</a>
+        <div class="social__media">
+          <div class=" social__media__wrap">
+            <h4>Follow me on </br>Facebook <span>#DJPABEL</span></h4>
+            <div class="social__media__btn__wrap">
+              <a href="#contact" class="social__media__btn">Facebook</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    </div>
     <div id="reviews">
       <div class="reviews__wrap">
-        <h2>Reviews</h2>
+        <h2>What people say...</h2>
         <div class="reviews__info">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, est eum minus ad quae nisi!</p>
           <div class="clients__name">
@@ -136,6 +147,8 @@
       </div>
       <div>
   </section>
+  <!--Photos/Reviews End-->
+
   <!--About -->
   <section id="about">
     <div class="wrapper">
@@ -160,27 +173,29 @@
         </div>
       </div>
   </section>
+  <!--About End-->
 
   <!--Contact -->
   <section id="contact">
-    <h1>Contact<span>Me</span></h1>
-    <div class="form__wrap">
-
-      <form class="contact__form" action="">
-        <h3>Make your reservations</h3>
-        <input type="text" name="Fname" placeholder="Name" required>
-        <input type="text" name="Fname" placeholder="Email" required>
-        <input type="text" name="Fname" placeholder="MM /DD / YYYY" required>
-        <input type="text" name="Fname" placeholder="Time" required>
-        <input type="text" name="Fname" placeholder="Event" required>
-        <textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
-        <button id="contact__btn">Book</button>
-      </form>
-      <!-- <div class="contact__img">
-          <img src="img/contact-img.jpg" alt="">
-        </div> *Needs work dont know how to incorporate it-->
-    </div>
+    <h1>Contact <span>Me</span> </h1>
+    <form id="contact__form" action="">
+      <div class="form__container">
+        <div class="form__wrap">
+          <h3>Make your reservations</h3>
+          <input type="text" name="Fname" placeholder="Name" required>
+          <input type="text" name="Fname" placeholder="Email" required>
+          <input type="text" name="Fname" placeholder="MM /DD / YYYY" required>
+          <input type="text" name="Fname" placeholder="Time" required>
+          <input type="text" name="Fname" placeholder="Event" required>
+          <textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
+          <button id="contact__btn">Book</button>
+        </div>
+      </div>
+      <div class="contact__img"></div>
+    </form>
   </section>
+  <!--Contact End-->
+
   <!--Footer-->
   <footer id="main__footer">
     <div class="wrapper">
@@ -193,7 +208,7 @@
       <div class="footer__logo">
         <div class="logo">
           <img src="img/Logo.png" alt="DJPABEL Logo">
-          <a href="#contact" class="footer btn">Contact Me</a>
+          <a href="#contact" class="footer-btn">Contact Me</a>
         </div>
       </div>
 
@@ -211,6 +226,8 @@
 
     </div>
   </footer>
+  <!--Footer End-->
+
   <script src="js/app.js"></script>
 </body>
 

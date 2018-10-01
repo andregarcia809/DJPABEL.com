@@ -7,8 +7,8 @@ hamburgerMenuEl.onclick = function() {
 
 // *Closes the nav
   window.addEventListener('click', function(e) {
-    var spanXEl = document.querySelector('#x');
-    if(event.target === navEl ||event.target === spanXEl) {
+    var navCloseEl = document.querySelector('#x');
+    if(event.target === navEl ||event.target === navCloseEl) {
       navEl.classList.remove('open')
     }
   })
