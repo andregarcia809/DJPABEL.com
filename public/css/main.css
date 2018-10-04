@@ -27,6 +27,11 @@ body {
   scroll-behavior: smooth;
 }
 
+
+.no-scrolling {
+  overflow: hidden;
+}
+
 .wrapper {
   width: 90%;
   height: 100%;
@@ -69,6 +74,8 @@ button:focus {
 }
 
 a:hover,
+input,
+textarea,
 a:focus,
 a:active {
   outline-style: none;
@@ -78,6 +85,90 @@ img {
   width: 100%;
   height: 100%;
 }
+
+/* Modal Start */
+.modal {
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.747) !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  display: none;
+  transition: 0.5s all ease-in-out;
+}
+
+.modal .modal__content {
+  width: 80%;
+  max-width: 640px;
+  margin: 3rem auto;
+  padding: 1rem;
+  background: #1c1f2a;
+  text-align: center;
+  border-radius: 4px;
+  border: 1px solid #970a13;
+  position: relative;
+  animation: .5s slideDown;
+}
+
+/* Animation */
+@keyframes slideDown {
+  from {
+    top: -100px;
+    opacity: 0;
+  }
+
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.open {
+  display: block;
+}
+
+@media screen and (min-width: 1024px) {
+  .modal .modal__content {
+    padding: 4rem 2rem;
+  }
+}
+
+
+.modal .modal__content .modal__header h1 {
+  font-size: 1.2rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .modal .modal__content .modal__header h1 {
+    font-size: 2rem;
+  }
+}
+
+.modal .modal__content .modal__header h1 span {
+  color: #970a13;
+}
+
+.modal .modal__content .modal__header .close__modal__btn {
+  width: 50px;
+  font-size: 2rem;
+  font-weight: 900;
+  position: absolute;
+  top: .2rem;
+  cursor: pointer;
+}
+
+.modal .modal__content .modal__body .contact__info__email {
+  margin: .5rem 0;
+}
+
+.modal .modal__content .modal__body .contact__info .fas {
+  font-size: 1.5rem;
+  color: #970a13;
+  padding-right: .5rem;
+}
+
 
 /* Header start*/
 #main__header {
@@ -99,7 +190,7 @@ img {
 
 @media screen and (min-width: 1024px) {
   #main__header .hamburger__container {
-    width: 45px;
+    width: 30px;
   }
 }
 
@@ -146,9 +237,10 @@ img {
 
 #main__header .main__nav .main__nav__menu .main__nav__menu__X__box {
   width: 50px;
-  position: absolute;
+  position: relative;
   left: 11.5rem;
   text-align: center;
+  z-index: 999;
 }
 
 #main__header .main__nav .main__nav__menu .main__nav__menu__X__box #x {
@@ -207,24 +299,24 @@ img {
 }
 
 
-#main__header .header__content .flex a.header__btn {
+#main__header .header__content .flex .header__btn {
   color: #fff;
   text-decoration: none;
   -webkit-transition: 0.3s all ease;
   transition: 0.3s ease all;
+  background: transparent;
+  cursor: pointer;
 }
 
-#main__header .header__content .flex a.header__btn:hover {
+#main__header .header__content .flex .header__btn:hover {
   color: #FFF;
 }
 
-#main__header .header__content .flex a.header__btn:focus {
+#main__header .header__content .flex .header__btn:focus {
   color: #FFF;
 }
-
 
 #main__header .header__content .flex .header__btn {
-
   font-size: 18px;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -233,11 +325,12 @@ img {
   width: 270px;
   font-weight: bold;
   padding: 14px 0px;
-  border: 3px solid hsl(356, 89%, 32%);
+  border: 3px solid rgb(154, 8, 18);
   border-radius: 10px;
   position: relative;
   -webkit-transition: 2s all ease;
   transition: 2s all ease;
+  z-index: 1;
 }
 
 #main__header .header__content .flex .header__btn:hover {
@@ -266,7 +359,6 @@ img {
   left: 50%;
   right: 50%;
   opacity: 1;
-
 }
 
 @media screen and (min-width: 768px) {
@@ -277,7 +369,6 @@ img {
 }
 
 /* Header end*/
-
 /* About Start*/
 #about h1 {
   color: #970a13;
@@ -384,13 +475,6 @@ img {
   margin: 0 auto;
 }
 
-@media screen and (min-width: 1025px) {
-  #about .about__content .about__bio .bio__content {
-    width: 95%;
-    /* padding: 2rem;/ */
-  }
-}
-
 #about .about__content .about__bio .bio__content p {
   font-size: 1.2rem;
   text-align: center;
@@ -400,6 +484,14 @@ img {
 @media screen and (min-width: 768px) {
   #about .about__content .about__bio .bio__content p {
     font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  #about .about__content .about__bio .bio__content p {
+    font-size: 1.5rem;
+    width: 80%;
+    margin: 0 auto;
   }
 }
 
@@ -521,9 +613,17 @@ img {
   }
 }
 
-@media screen and (min-width: 1040px) {
+@media screen and (min-width:1024px) {
   #services .wrapper .services__content .services__details .services__info p {
     font-size: 1.5rem;
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 1120px) {
+  #services .wrapper .services__content .services__details .services__info p {
+    font-size: 2rem;
   }
 }
 
@@ -640,9 +740,13 @@ img {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
   margin-top: .8rem;
@@ -712,30 +816,30 @@ img {
 }
 
 #photos-reviews .photos__gallery {
-  /* add to gulp sass*/
   display: grid;
   justify-items: center;
-  -webkit-row-gap: 1.5rem;
-  row-gap: 1.5rem;
   padding: 0 2rem;
+  height: 100%;
 }
 
 @media screen and (min-width: 1024px) {
   #photos-reviews .photos__gallery {
     grid-template-columns: repeat(3, 1fr);
-    -webkit-column-gap: 1.5rem;
-    column-gap: 1.5rem;
+    -webkit-column-gap: 1rem;
+    -moz-column-gap: 1rem;
+    -ms-column-gap: 1rem;
+    column-gap: 1rem;
   }
 }
 
 #photos-reviews .photos__gallery .img__wrap {
   max-width: 500px;
+  margin-bottom: 1rem;
 }
 
 
 #photos-reviews .photos__gallery .img__wrap img {
   height: 100%;
-  max-height: 400px;
 }
 
 
@@ -745,7 +849,6 @@ img {
 
 @media screen and (min-width: 1024px) {
   #photos-reviews .photos__gallery .social__media {
-    /* add to gulp sass*/
     border: 2px solid #970a13;
     background-color: #1C1F2A;
     width: 30%;
@@ -756,6 +859,9 @@ img {
     top: 60%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
   }
 }
@@ -764,7 +870,6 @@ img {
   #photos-reviews .photos__gallery .social__media {
     /* add to gulp sass*/
     height: 17%;
-
   }
 }
 
@@ -840,6 +945,8 @@ img {
   width: 90%;
   height: 100%;
   margin: 0 auto;
+  overflow: hidden;
+  position: relative;
 }
 
 @media screen and (min-width: 1024px) {
@@ -847,6 +954,22 @@ img {
     width: 60%;
   }
 }
+
+#photos-reviews #reviews #reviews1,
+#reviews2,
+#reviews3 {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  top: 4rem;
+  transition: all ease-in-out 500ms;
+  -webkit-transition: all ease-in-out 500ms;
+  -moz-transition: all ease-in-out 500ms;
+  -o-transition: all ease-in-out 500ms;
+}
+
+;
 
 #photos-reviews #reviews .reviews__wrap h2 {
   padding-top: 1rem;
@@ -867,6 +990,7 @@ img {
   font-family: 'Waiting for the Sunrise', cursive;
 }
 
+
 @media screen and (min-width: 768px) {
   #photos-reviews #reviews .reviews__info p {
     font-size: 1.5rem;
@@ -885,18 +1009,27 @@ img {
 }
 
 #photos-reviews #reviews .slider {
-  margin-top: 2rem;
+  margin-top: 13rem;
 }
 
-#photos-reviews #reviews .slider #round__dots {
+@media screen and (min-width: 1024px) {
+  #photos-reviews #reviews .slider {
+    margin-top: 16rem;
+    position: relative;
+    z-index: 9999;
+  }
+}
+
+#photos-reviews #reviews .slider .round__dots {
   height: 20px;
   width: 20px;
   background-color: #fff;
   border-radius: 50%;
   display: inline-block;
+  cursor: pointer;
 }
 
-#photos-reviews #reviews .slider #round__dots:nth-child(2) {
+#photos-reviews #reviews .slider .round__dots:nth-child(2) {
   margin: 0 .5rem;
 }
 
@@ -939,6 +1072,7 @@ img {
   text-align: center;
   text-transform: uppercase;
   padding: 1rem 0;
+  margin-bottom: .5rem;
 }
 
 @media screen and (min-width: 1024px) {
@@ -967,12 +1101,11 @@ img {
   /* Add to gulp sass*/
   display: grid;
   grid-template-rows: auto;
-  row-gap: 1rem;
-  column-gap: 1rem;
   width: 90%;
   max-width: 620px;
   margin: 0 auto;
   padding: 1rem 0;
+  height: 600px;
 }
 
 @media screen and (min-width: 1024px) {
@@ -985,6 +1118,20 @@ img {
   height: 48px;
   background-color: rgba(230, 114, 114, 0.5) !important;
   border: none;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+  color: #fff;
+}
+
+#contact #contact__form .form__wrap input::placeholder {
+  color: #fff;
+  font-size: .5rem;
+}
+
+@media screen and (min-width: 1024px) {
+  #contact #contact__form .form__wrap input::placeholder {
+    font-size: 1rem;
+  }
 }
 
 #contact #contact__form .form__wrap input:nth-child(2) {
@@ -1016,8 +1163,24 @@ img {
   grid-column: 1/-1;
   grid-row: 7/7;
   background-color: rgba(230, 114, 114, 0.5) !important;
+  margin-bottom: 1rem;
   border: none;
+  padding: 1rem;
+  color: #fff;
 }
+
+#contact #contact__form .form__wrap textarea::placeholder {
+  color: #fff;
+  font-size: .5rem;
+  text-transform: capitalize;
+}
+
+@media screen and (min-width: 1024px) {
+  #contact #contact__form .form__wrap textarea::placeholder {
+    font-size: 1rem;
+  }
+}
+
 
 #contact #contact__form .form__wrap #contact__btn {
   grid-column: 1/-1;
@@ -1032,19 +1195,24 @@ img {
   padding: 14px 0px;
   border-radius: 2px;
   position: relative;
-  background: rgba(230, 114, 114, 0.5);
+  background: #1C1F2A;
   border: none;
   z-index: 1;
+  cursor: pointer;
 }
 
 #contact__btn:hover {
   box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.16), 0px 20px 20px rgba(0, 0, 0, 0.1);
   -webkit-transition: 0.5s all ease;
+  -moz-transition: 0.5s all ease;
+  -o-transition: 0.5s all ease;
   transition: 0.5s all ease;
 }
 
 #contact__form .form__wrap #contact__btn:before {
   -webkit-transition: 0.5s all ease;
+  -moz-transition: 0.5s all ease;
+  -o-transition: 0.5s all ease;
   transition: 0.5s all ease;
   position: absolute;
   top: 0;
@@ -1053,13 +1221,15 @@ img {
   bottom: 0;
   opacity: 1;
   content: "";
-  background-color: #1C1F2A;
+  background-color: #360505;
   color: #fff;
   z-index: -1;
 }
 
 #contact #contact__form .form__wrap #contact__btn:hover::before {
   -webkit-transition: 0.5s all ease;
+  -moz-transition: 0.5s all ease;
+  -o-transition: 0.5s all ease;
   transition: 0.5s all ease;
   left: 50%;
   right: 50%;
@@ -1103,12 +1273,21 @@ img {
   grid-template-columns: 25% 35% 25%;
   grid-template-rows: auto;
   -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -o-box-pack: center;
+  -ms-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
   -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   -webkit-column-gap: .5rem;
+  -moz-column-gap: .5rem;
+  -o-column-gap: .5rem;
+  -ms-column-gap: .5rem;
   column-gap: .5rem;
   padding-top: 1rem;
 }
@@ -1129,6 +1308,13 @@ img {
   line-height: 2;
 }
 
+@media screen and (min-width: 1024px) {
+  #main__footer .wrapper .footer__info h5 {
+    font-size: 1.5rem;
+  }
+}
+
+
 #main__footer .wrapper .footer__logo {
   grid-column: 2/3;
   text-align: center;
@@ -1136,14 +1322,8 @@ img {
 }
 
 #main__footer .wrapper .footer__logo .footer-btn {
-  /* add to Gulp sass*/
-  /* font-size: .5rem;
-  position: static;
-  padding-right: 1.5rem;
-  padding-left: 1.5rem;
-  border-radius: 6px; */
   color: #fff;
-  font-size: 18px;
+  font-size: 12px;
   letter-spacing: 2px;
   text-transform: uppercase;
   display: inline-block;
@@ -1153,15 +1333,15 @@ img {
   border: 3px solid #970a13;
   border-radius: 10px;
   position: relative;
+  cursor: pointer;
 }
 
 .footer-btn:hover {
-  /* add to Gulp sass*/
+
   box-shadow: 0 3px 30px rgba(153, 9, 19, 0.16), 0 3px 30px rgba(153, 9, 19, 0.1);
 }
 
 #main__footer .wrapper .footer__logo .footer-btn:before {
-  /* add to Gulp sass*/
   -webkit-transition: 0.5s all ease;
   transition: 0.5s all ease;
   position: absolute;
@@ -1176,7 +1356,6 @@ img {
 }
 
 #main__footer .wrapper .footer__logo .footer-btn:hover::before {
-  /* add to Gulp sass*/
   -webkit-transition: 0.5s all ease;
   transition: 0.5s all ease;
   left: 50%;
@@ -1195,6 +1374,11 @@ img {
   font-size: .8rem;
   padding-bottom: .2rem;
 }
+@media screen and (min-width: 1024px) {
+  #main__footer .wrapper .footer__nav a {
+    font-size: 1.5rem;
+  }
+}
 
 #main__footer .wrapper .footer__nav a:hover {
   border-bottom: 3px solid #970a13;
@@ -1209,6 +1393,11 @@ img {
 
 #main__footer .wrapper .copyright__info p {
   font-size: .8rem;
+}
+@media screen and (min-width: 1024px) {
+  #main__footer .wrapper .copyright__info p {
+    font-size: 1.5rem;
+  }
 }
 
 #main__footer .wrapper .copyright__info span {

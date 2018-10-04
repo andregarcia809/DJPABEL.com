@@ -6,12 +6,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    crossorigin="anonymous">
   <title>DJPABEL</title>
 </head>
 
-<body>
+<body id="body">
   <!--Main Header-->
   <header id="main__header">
+    <!--modal-->
+    <div class="modal">
+      <div class="modal__content">
+        <div class="modal__header">
+          <div class="close__modal__btn">
+            <span>X</span>
+          </div>
+          <h1><span>Great</span> Atmosphere is <span>my</span> Expertise</h1>
+          <h3>Contact me to book your event today.</h3>
+        </div>
+        <div class="modal__body">
+          <div class="contact__info">
+            <div class="contact__info__email">
+              <i class="fas fa-envelope-open"></i>
+              <span>Elpabel.dj@gmail.com</span>
+            </div>
+            <div class="contact__info__phone">
+              <i class="fas fa-mobile-alt"></i>
+              <span>(561) 632-7480</span>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="hamburger__container">
       <div class="hamburger__menu ">
         <span class="hamburger__span"></span>
@@ -32,7 +60,7 @@
           <img src="img/Logo.png" alt="DJPABEL Logo">
         </div>
         <div class="flex">
-          <a href="#contact" class="header__btn">Contact Me</a>
+          <button class="header__btn">Contact Me</button>
         </div>
       </div>
     </div>
@@ -123,29 +151,40 @@
           <div class=" social__media__wrap">
             <h4>Follow me on </br>Facebook <span>#DJPABEL</span></h4>
             <div class="social__media__btn__wrap">
-              <a href="#contact" class="social__media__btn">Facebook</a>
+              <a href="https://www.facebook.com/elpabel.dj/" class="social__media__btn">Facebook</a>
             </div>
           </div>
         </div>
       </div>
     </div>
-    </div>
     <div id="reviews">
       <div class="reviews__wrap">
         <h2>What people say...</h2>
-        <div class="reviews__info">
+        <div class="reviews__info" id="reviews1">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, est eum minus ad quae nisi!</p>
           <div class="clients__name">
-            <h5>- Amanda Perez</h5>
+            <h5>- Amanda Perez 1</h5>
+          </div>
+        </div>
+        <div class="reviews__info" id="reviews2">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, est eum minus ad quae nisi!</p>
+          <div class="clients__name">
+            <h5>- Steve Connor</h5>
+          </div>
+        </div>
+        <div class="reviews__info" id="reviews3">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, est eum minus ad quae nisi!</p>
+          <div class="clients__name">
+            <h5>- Maria Rodriguez</h5>
           </div>
         </div>
         <div class="slider">
-          <span id="round__dots"></span>
-          <span id="round__dots"></span>
-          <span id="round__dots"></span>
+          <span class="round__dots" id="circle1"></span>
+          <span class="round__dots" id="circle2"></span>
+          <span class="round__dots" id="circle3"></span>
         </div>
       </div>
-      <div>
+    </div>
   </section>
   <!--Photos/Reviews End-->
 
@@ -203,12 +242,12 @@
         <h5>At your service</h5>
         <h5>Performance DJPABEL</h5>
         <h5>Call Or Text</br>(561) 632-7480</h5>
-        <h5>elpabel@gmail.com</h5>
+        <h5>Elpabel.dj@gmail.com</h5>
       </div>
       <div class="footer__logo">
         <div class="logo">
           <img src="img/Logo.png" alt="DJPABEL Logo">
-          <a href="#contact" class="footer-btn">Contact Me</a>
+          <span class="footer-btn">Contact Me</span>
         </div>
       </div>
 
